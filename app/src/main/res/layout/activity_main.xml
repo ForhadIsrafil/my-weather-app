@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:background="#7EAF80"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -13,7 +14,8 @@
         android:id="@+id/countryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints=""
+        android:autofillHints="@string/country_or_city_name"
+        android:hint="@string/country_or_city_name"
         android:inputType="text"
         tools:ignore="LabelFor" />
 
@@ -21,23 +23,37 @@
         android:id="@+id/submitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/submit" />
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/search"
+        android:textColor="#FF9800" />
 
-    <TextView
-        android:id="@+id/response_id"
-        android:layout_width="281dp"
-        android:layout_height="78dp"
-        android:layout_gravity="center"
-        android:height="40dp"
-        android:text=""
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_red_light" />
 
-    <ImageView
-        android:id="@+id/image_id"
-        android:layout_width="268dp"
-        android:layout_height="115dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/app_name" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#58805A">
+
+        <TextView
+            android:id="@+id/response_id"
+            android:layout_width="251dp"
+            android:layout_height="108dp"
+            android:width="60dp"
+            android:height="60dp"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/image_id"
+            android:layout_width="140dp"
+            android:layout_height="115dp"
+            android:layout_gravity="end"
+            android:contentDescription="@string/app_name"
+            android:foregroundGravity="center|fill_horizontal" />
+    </androidx.cardview.widget.CardView>
+
 
 </LinearLayout>

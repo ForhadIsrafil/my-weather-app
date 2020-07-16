@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     Button submitButton;
     TextView response_data;
     ImageView image_view;
-    Context icontext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,12 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String countryNameT = countryName.getText().toString();
+                String countryNameT = countryName.getText().toString().trim();
+                if (TextUtils.isEmpty(countryNameT)) {
+                    countryName.setError("Please Enter Country or City Name");
+                    return;
+                }
+
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
                 String url = "https://api.openweathermap.org/data/2.5/weather?q=" + countryNameT + "&APPID=f7447d212a002af7623c1fb748233a6e";
                 // Formulate the request and handle the response.
@@ -77,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                                     String data = "Temperature: " + Math.round(final_temperature) + "°С\n Wind: " + wind + " Mile/S\n" + weather_description;
                                     response_data.setText(data);
                                     Glide.with(MainActivity.this).load(icon_url).into(image_view);
-                                    
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
