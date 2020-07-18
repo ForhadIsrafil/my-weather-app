@@ -5,30 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".CountriesWeatherActivity">
 
-    <EditText
-        android:id="@+id/countryName"
+    <TextView
+        android:id="@+id/country_response_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="@string/country_or_city_name"
-        android:hint="@string/country_or_city_name"
-        android:inputType="text"
-        tools:ignore="LabelFor" />
-
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/search"
-        android:textColor="#FF9800" />
-
+        android:layout_height="37dp"
+        android:layout_marginBottom="4dp"
+        android:width="60dp"
+        android:height="60dp"
+        android:background="#EBC8B27C"
+        android:gravity="center"
+        android:text="@string/worlds_weather"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#58805A">
+        android:layout_marginTop="4dp"
+        app:cardBackgroundColor="#58805A"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/response_id"
@@ -51,16 +49,6 @@
             android:contentDescription="@string/app_name"
             android:foregroundGravity="center|fill_horizontal" />
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="4dp"
-        android:background="@color/colorSearchButton"
-        android:text="@string/world_weather"
-        android:textColor="@color/colorAccent"
-        android:onClick="worldWeather"/>
 
 
 </LinearLayout>

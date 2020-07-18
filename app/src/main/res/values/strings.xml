@@ -3,4 +3,6 @@
     <string name="submit">submit</string>
     <string name="search">search</string>
     <string name="country_or_city_name">Country or City Name</string>
+    <string name="world_weather">world weather</string>
+    <string name="worlds_weather">Worlds Weather</string>
 </resources>

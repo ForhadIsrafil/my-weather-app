@@ -3,6 +3,7 @@ package com.example.myweather;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -102,5 +103,10 @@ public class MainActivity extends AppCompatActivity {
                 requestQueue.add(jsonObject_Request);
             }
         });
+    }
+
+    public void worldWeather(View view) {
+        Intent to_weather = new Intent(this, CountriesWeatherActivity.class);
+        startActivity(to_weather);
     }
 }
