@@ -60,7 +60,7 @@
         android:background="@color/colorSearchButton"
         android:text="@string/world_weather"
         android:textColor="@color/colorAccent"
-        android:onClick="worldWeather"/>
+        android:onClick="worldWeather" />
 
 
 </LinearLayout>
