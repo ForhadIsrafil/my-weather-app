@@ -16,7 +16,7 @@ public abstract class CountryDatabase extends RoomDatabase {
             synchronized (CountryDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            CountryDatabase.class, "country_database")
+                            CountryDatabase.class, "country_database.db")
                             .fallbackToDestructiveMigration() // if any changes in database that will be not effect of new migration on DB
                             .build();
                 }
