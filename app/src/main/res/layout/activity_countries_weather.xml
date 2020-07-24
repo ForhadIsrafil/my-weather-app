@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context=".CountriesWeatherActivity">
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weather_list_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CED5F3D8" />
+
     <!--    <TextView-->
     <!--        android:id="@+id/country_response_id"-->
     <!--        android:layout_width="match_parent"-->
@@ -49,10 +56,6 @@
     <!--            android:contentDescription="@string/app_name"-->
     <!--            android:foregroundGravity="center|fill_horizontal" />-->
     <!--    </androidx.cardview.widget.CardView>-->
-    <ListView
-        android:id="@+id/weather_list_id"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 
 </LinearLayout>
