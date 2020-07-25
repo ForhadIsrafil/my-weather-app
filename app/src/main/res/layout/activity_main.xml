@@ -16,14 +16,16 @@
         android:inputType="text"
         tools:ignore="LabelFor" />
 
+
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="match_parent"
+        android:layout_width="254dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_round_button"
         android:text="@string/search"
         android:textColor="#FF9800" />
-
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -57,10 +59,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
-        android:background="@color/colorSearchButton"
+        android:background="@drawable/custom_round_button"
+        android:onClick="worldWeather"
         android:text="@string/world_weather"
-        android:textColor="@color/colorAccent"
-        android:onClick="worldWeather" />
+        android:textColor="@color/colorAccent" />
 
 
 </LinearLayout>
