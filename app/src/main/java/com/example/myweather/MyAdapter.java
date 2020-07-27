@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            moboView = itemView.findViewById(R.id.mobo_id);
+//            moboView = itemView.findViewById(R.id.mobo_id);
         }
     }
 }
