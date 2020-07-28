@@ -59,6 +59,8 @@ public class CountriesWeatherActivity extends AppCompatActivity {
 
             String url = "https://api.openweathermap.org/data/2.5/weather?q=" + countryArray[i] + "&APPID=f7447d212a002af7623c1fb748233a6e";
             System.out.println("url........ " + url);
+            System.out.println("country " + countryArray[i]);
+            System.out.println("response_data_list " + response_data_list);
 
             // Formulate the request and handle the response.
             JsonObjectRequest jsonObject_Request = new JsonObjectRequest(Request.Method.GET, url, null,
