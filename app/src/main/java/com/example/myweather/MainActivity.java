@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Button submitButton;
     TextView response_data;
     ImageView image_view;
-    private Repository repositoryObj;
+
 
 
     @Override
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         response_data = findViewById(R.id.response_id);
         image_view = findViewById(R.id.image_id);
 
+
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     countryName.setError("Please Enter Country or City Name");
                     return;
                 }
+
+                // save data to table
+//                CountryDatabase database = CountryDatabase.getDatabase(MainActivity.this);
+//                Countries nameData = new Countries();
+//                nameData.setName(countryNameT);
+//                database.countriesDao.insertCountryName(nameData);
 
                 RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
                 String url = "https://api.openweathermap.org/data/2.5/weather?q=" + countryNameT + "&APPID=f7447d212a002af7623c1fb748233a6e";

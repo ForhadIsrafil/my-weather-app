@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 @Database(entities = {Countries.class}, version = 1)
 public abstract class CountryDatabase extends RoomDatabase {
     public CountriesDao countriesDao;
-    private static volatile CountryDatabase INSTANCE;
+    private static CountryDatabase INSTANCE;
 
     static CountryDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
@@ -18,12 +18,12 @@ public abstract class CountryDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             CountryDatabase.class, "country_database.db")
                             .fallbackToDestructiveMigration() // if any changes in database that will be not effect of new migration on DB
+                            .allowMainThreadQueries()
                             .build();
                 }
             }
         }
         return INSTANCE;
     }
-
     public abstract CountriesDao countriesDao();
 }

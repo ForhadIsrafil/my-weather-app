@@ -11,9 +11,9 @@ public class Countries {
     int id;
     String name;
 
-    public Countries(String name) {
-        this.name = name;
-    }
+//    public Countries(String name) {
+//        this.name = name;
+//    }
 
     public int getId() {
         return id;
